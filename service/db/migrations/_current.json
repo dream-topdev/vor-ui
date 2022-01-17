@@ -1,0 +1,465 @@
+{
+    "tables": {
+        "ChangeFees": {
+            "tableName": "ChangeFees",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "keyHash": {
+                    "field": "keyHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fee": {
+                    "field": "fee",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "ChangeGranularFees": {
+            "tableName": "ChangeGranularFees",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "keyHash": {
+                    "field": "keyHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "consumer": {
+                    "field": "consumer",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fee": {
+                    "field": "fee",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "DistributeResults": {
+            "tableName": "DistributeResults",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "distID": {
+                    "field": "distID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "beginIndex": {
+                    "field": "beginIndex",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "sourceCount": {
+                    "field": "sourceCount",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "destCount": {
+                    "field": "destCount",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "dataType": {
+                    "field": "dataType",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "requestID": {
+                    "field": "requestID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sender": {
+                    "field": "sender",
+                    "seqType": "Sequelize.STRING"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "NewMonikers": {
+            "tableName": "NewMonikers",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "requester": {
+                    "field": "requester",
+                    "seqType": "Sequelize.STRING"
+                },
+                "moniker": {
+                    "field": "moniker",
+                    "seqType": "Sequelize.STRING"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "NewServiceAgreements": {
+            "tableName": "NewServiceAgreements",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "keyHash": {
+                    "field": "keyHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fee": {
+                    "field": "fee",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "providerAddress": {
+                    "field": "providerAddress",
+                    "seqType": "Sequelize.STRING"
+                },
+                "publicKey": {
+                    "field": "publicKey",
+                    "seqType": "Sequelize.STRING"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "RandomnessRequests": {
+            "tableName": "RandomnessRequests",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "keyHash": {
+                    "field": "keyHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "seed": {
+                    "field": "seed",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sender": {
+                    "field": "sender",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fee": {
+                    "field": "fee",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "requestID": {
+                    "field": "requestID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "RandomnessRequestFulfilleds": {
+            "tableName": "RandomnessRequestFulfilleds",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "requestID": {
+                    "field": "requestID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "output": {
+                    "field": "output",
+                    "seqType": "Sequelize.STRING"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "gasUsed": {
+                    "field": "gasUsed",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "gasPrice": {
+                    "field": "gasPrice",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "StartingDistributes": {
+            "tableName": "StartingDistributes",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "distID": {
+                    "field": "distID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "ipfs": {
+                    "field": "ipfs",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sourceCount": {
+                    "field": "sourceCount",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "destCount": {
+                    "field": "destCount",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "dataType": {
+                    "field": "dataType",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "requestID": {
+                    "field": "requestID",
+                    "seqType": "Sequelize.STRING"
+                },
+                "keyHash": {
+                    "field": "keyHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "seed": {
+                    "field": "seed",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sender": {
+                    "field": "sender",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fee": {
+                    "field": "fee",
+                    "seqType": "Sequelize.BIGINT"
+                },
+                "blockNumber": {
+                    "field": "blockNumber",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "blockHash": {
+                    "field": "blockHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txHash": {
+                    "field": "txHash",
+                    "seqType": "Sequelize.STRING"
+                },
+                "txIndex": {
+                    "field": "txIndex",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 5
+}

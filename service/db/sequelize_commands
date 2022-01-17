@@ -1,0 +1,9 @@
+npx sequelize-cli model:generate --name NewServiceAgreement --attributes keyHash:string,fee:bigint,blockNumber:integer,blockHash:string,txHash:string,txIndex:integer
+
+npx sequelize-cli model:generate --name ChangeFee --attributes keyHash:string,fee:bigint,blockNumber:integer,blockHash:string,txHash:string,txIndex:integer
+
+npx sequelize-cli model:generate --name ChangeGranularFee --attributes keyHash:string,consumer:string,fee:bigint,blockNumber:integer,blockHash:string,txHash:string,txIndex:integer
+
+npx sequelize-cli model:generate --name RandomnessRequest --attributes keyHash:string,seed:string,sender:string,fee:bigint,requestID:string,blockNumber:integer,blockHash:string,txHash:string,txIndex:integer
+
+npx sequelize-cli model:generate --name RandomnessRequestFulfilled --attributes requestID:string,output:string,blockNumber:integer,blockHash:string,txHash:string,txIndex:integer
