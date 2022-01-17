@@ -1,0 +1,73 @@
+version: "3.1"
+services:
+  vor-ui-proxy:
+    hostname: vor-ui-proxy
+    container_name: vor-ui-proxy
+    build:
+      context: .
+      dockerfile: ./docker/nginx.Dockerfile
+    networks:
+      vorui_devnet:
+        ipv4_address: 172.25.0.3
+    ports:
+      - "5000:5000"
+  
+  vorui-postgres:
+    image: postgres
+    restart: always
+    hostname: vorui-postgres
+    container_name: vorui-postgres
+    environment:
+      - POSTGRES_USER=vorui
+      - POSTGRES_PASSWORD=vorui
+      - POSTGRES_DB=vorui
+    networks:
+      vorui_devnet:
+        ipv4_address: 172.25.0.4
+    ports:
+      - "5432:5432"
+
+  pgweb:
+    container_name: pg-ui-web
+    restart: unless-stopped
+    image: sosedoff/pgweb
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=postgres://vorui:vorui@172.25.0.4:5432/vorui?sslmode=disable
+    depends_on:
+      - vorui-postgres
+    networks:
+      vorui_devnet:
+        ipv4_address: 172.25.0.5
+
+  vor-ui:
+    hostname: vor-ui
+    build:
+      context: .
+      dockerfile: ./docker/ui.Dockerfile
+    container_name: vor-ui
+    command: >
+      /bin/sh -c "
+        until nc -z 172.25.0.4 5432; do sleep 1; echo 'wait for db'; done
+        cd /root/vor-ui
+        npm run db:migrate
+        pm2 start npm --name vor_service_rinkeby -- run service
+        pm2 serve build 8082 --spa --name vor_ui_rinkeby
+        pm2 logs
+        "
+    depends_on:
+      - vorui-postgres
+    networks:
+      vorui_devnet:
+        ipv4_address: 172.25.0.6
+    ports:
+      - "8082:8082"
+      - "8080:8080"
+
+networks:
+  vorui_devnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.0.0/24

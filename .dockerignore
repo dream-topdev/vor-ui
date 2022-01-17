@@ -1,0 +1,6 @@
+.git
+.cache
+.idea
+build
+node_modules
+logs
